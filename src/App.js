@@ -78,6 +78,7 @@ function App() {
 
           <Route path="/">
             <Header />
+
             <Home />
             <Footer />
           </Route>

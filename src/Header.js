@@ -1,7 +1,10 @@
 import React from "react";
 import "./Header.css";
 import SearchIcon from "@material-ui/icons/Search";
-import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
+import Badge from '@material-ui/core/Badge';
+import { withStyles } from '@material-ui/core/styles';
+import IconButton from '@material-ui/core/IconButton';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { Link } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
 import { auth } from "./firebase";
@@ -49,7 +52,7 @@ function Header() {
           </div>
         </Link>
 
-        <Link className="link-style" to="./account">
+        <Link className="link-style" to="/account">
           <div className="header__option">
             <span className="header__optionLineOne">Your</span>
             <br></br>
@@ -59,7 +62,8 @@ function Header() {
 
         <Link className="link-style" to="/checkout">
           <div className="header__optionBasket">
-            <ShoppingBasketIcon />
+<ShoppingCartIcon>
+  </ShoppingCartIcon>      
             <span className="header__optionLineTwo header__basketCount">
               {basket?.length}
             </span>
