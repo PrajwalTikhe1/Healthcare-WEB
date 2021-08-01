@@ -4,8 +4,6 @@ import { useStateValue } from "./StateProvider";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import Link from "@material-ui/core/Link";
-
 function Product({ title, image, id, price, rating }) {
   // eslint-disable-next-line
   const [{ basket }, dispatch] = useStateValue();
@@ -41,7 +39,7 @@ function Product({ title, image, id, price, rating }) {
         </div>
       </div>
 
-      <button onClick={addToBasket} > Add to Basket</button>
+      <button onClick={addToBasket}> Add to Basket</button>
     </div>
   );
 }
