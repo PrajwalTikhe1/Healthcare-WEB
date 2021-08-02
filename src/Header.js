@@ -22,9 +22,12 @@ function Header() {
       <Link to="/">
         <img className="header__logo" src={logo} alt="Healthcare Logo" />
       </Link>
-
       <div className="header__search">
-        <input className="header__searchInput" type="text" />
+        <input
+          placeholder="Search for products..."
+          className="header__searchInput"
+          type="text"
+        />
         <SearchIcon className="header__searchIcon" />
       </div>
 
