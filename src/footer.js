@@ -7,13 +7,13 @@ export default function footer() {
   return (
     <footer>
       <Box
-        px={{ xs: 2, sm: 4 }}
-        py={{ xs: 2, sm: 4 }}
+        px={{ xs: 3, sm: 6 }}
+        py={{ xs: 3, sm: 6 }}
         bgcolor="info.main"
         color="white"
         textAlign="center"
         fontSize="1rem"
-        fontWeight="600"
+        fontWeight="620"
       >
         <Container maxWidth="lg">
           <Grid container spacing="5">
@@ -65,7 +65,7 @@ export default function footer() {
             </Grid>
           </Grid>
 
-          <Box textAlign="center" pt={{ xs: 2, sm: 4 }} pb={{ xs: 2, sm: 0 }}>
+          <Box textAlign="center" pt={{ xs: 4, sm: 2 }} pb={{ xs: 4, sm: 2 }}>
             &reg; {new Date().getFullYear()} Health Care Pvt. Ltd. All Rights
             Reserved
           </Box>
