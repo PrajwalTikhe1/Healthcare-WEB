@@ -3,6 +3,8 @@ import "./Login.css";
 import { Link, useHistory } from "react-router-dom";
 import { auth } from "./firebase";
 import logo from "./logo1.jpg";
+import Checkbox from "@material-ui/core/Checkbox";
+import { FormControlLabel } from "@material-ui/core";
 
 function Login() {
   const history = useHistory();
@@ -34,6 +36,17 @@ function Login() {
       .catch((error) => alert(error.message));
   };
 
+  const [state, setState] = React.useState({
+    UncheckedA: true,
+    UncheckedB: true,
+    checkedF: true,
+    checkedG: true,
+  });
+
+  const handleChange = (event) => {
+    setState({ ...state, [event.target.name]: event.target.checked });
+  };
+
   return (
     <div className="login">
       <Link to="/">
@@ -49,15 +62,29 @@ function Login() {
             type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            placeholder="Enter Email *"
           />
-
           <h5>Password</h5>
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            placeholder="Enter Password *"
           />
 
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={state.checkedB}
+                onChange={handleChange}
+                name="checkedB"
+                color="primary"
+              />
+            }
+            label="Remember Password"
+            label-size="small"
+
+          />
           <button
             type="submit"
             onClick={signIn}

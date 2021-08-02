@@ -13,6 +13,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import Account from "./Account";
 import Footer from "./footer";
+// import Sidebar from "./Sidebar";
 
 const promise = loadStripe(
   "pk_test_51JJI2mSBoXuagvd5eI8eOOW6Lg2ckOyD8nAmq3u1QTxCISS9GBXDOiMJve8iIUYn8SkI4WAsfvvtXSIxrp7lFB1k003EcUqIli"
@@ -78,9 +79,8 @@ function App() {
 
           <Route path="/">
             <Header />
-
+            {/* <Sidebar /> */}
             <Home />
-
             <Footer />
           </Route>
         </Switch>
