@@ -7,6 +7,7 @@ import { useStateValue } from "./StateProvider";
 import { auth } from "./firebase";
 import logo from "./logo.jpg";
 
+
 function Header() {
   // eslint-disable-next-line
   const [{ basket, user }, dispatch] = useStateValue();
@@ -15,7 +16,7 @@ function Header() {
     if (user) {
       auth.signOut();
     }
-  };
+  };  
 
   return (
     <div className="header">
@@ -33,18 +34,20 @@ function Header() {
         </Link>
       </div>
 
+      
       <div className="header__nav">
-        <Link className="link-style" to={!user && "/login"}>
-          <div onClick={handleAuthenticaton} className="header__option">
-            <span className="header__optionLineOne">
-              Hello, {!user ? "Guest" : user.email}
-            </span>
-            <br></br>
-            <span className="header__optionLineTwo">
-              {user ? "Sign Out" : "Sign In"}
-            </span>
-          </div>
-        </Link>
+
+      <Link className="link-style" to="/login">
+        <div onClick={handleAuthenticaton} className="header__option">
+          <span className="header__optionLineOne">
+            Hello, {!user ? "Guest" : user.emaile}
+          </span>
+          <br></br>
+          <span className="header__optionLineTwo">
+            {user ? "Sign Out" : "Sign In"}
+          </span>
+        </div>
+      </Link>
 
         <Link className="link-style" to="/orders">
           <div className="header__option">

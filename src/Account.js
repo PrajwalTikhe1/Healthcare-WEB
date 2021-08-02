@@ -5,7 +5,7 @@ import React from "react";
 function Account() {
   return (
     <div>
-      <h1>ACCOUNT</h1>
+      <h1 className="raju">ACCOUNT</h1>
     </div>
   );
 }

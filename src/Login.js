@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import "./Login.css";
 import { Link, useHistory } from "react-router-dom";
-import { auth } from "./firebase";
 import logo from "./logo1.jpg";
 import Checkbox from "@material-ui/core/Checkbox";
 import { FormControlLabel } from "@material-ui/core";
+import auth from "firebase";
+// import netlifyIdentity from "netlify-identity-widget";
+
+// netlifyIdentity.init()
 
 function Login() {
   const history = useHistory();
