@@ -28,7 +28,9 @@ function Header() {
           className="header__searchInput"
           type="text"
         />
-        <SearchIcon className="header__searchIcon" />
+        <Link to="/" className="btn btn-primary">
+          <SearchIcon className="header__searchIcon" />
+        </Link>
       </div>
 
       <div className="header__nav">

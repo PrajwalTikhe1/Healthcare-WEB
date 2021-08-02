@@ -18,48 +18,60 @@ export default function footer() {
         <Container maxWidth="lg">
           <Grid container spacing="5">
             <Grid item xs={8} sm={4}>
-              <Box borderBottom={1}>Help</Box>
+              <Link href="/Account" color="inherit">
+                <Box borderBottom={1}>Help</Box>
+              </Link>
               <Box>
-                <Link to="/Account" color="inherit">
+                <Link href="/Account" color="inherit">
                   Contact
                 </Link>
               </Box>
               <Box>
-                <Link to="/Account" color="inherit">
+                <Link href="/Account" color="inherit">
                   Support
                 </Link>
               </Box>
               <Box>
-                <Link to="/Account" color="inherit">
+                <Link href="/Account" color="inherit">
                   Privacy
                 </Link>
               </Box>
             </Grid>
 
             <Grid item xs={8} sm={4}>
-              <Box borderBottom={1}>Account</Box>
+              <Link href="/Account" color="inherit">
+                <Box borderBottom={1}>Account</Box>
+              </Link>
               <Box>
-                <Link to="/Login" color="inherit">
+                <Link href="/Login" color="inherit">
                   Sign In
                 </Link>
               </Box>
               <Box>
-                <Link to="/Login" color="inherit">
+                <Link href="/Login" color="inherit">
                   Sign Out
                 </Link>
               </Box>
             </Grid>
 
             <Grid item xs={8} sm={4}>
-              <Box borderBottom={1}>Checkout</Box>
+              <Link href="/Orders" color="inherit">
+                <Box borderBottom={1}>Checkout</Box>
+              </Link>
               <Box>
-                <Link to="/Orders" color="inherit">
+                <Link href="/Orders" color="inherit">
                   Orders
                 </Link>
               </Box>
               <Box>
-                <Link to="/Checkout" color="inherit">
+                <Link href="/Checkout" color="inherit">
                   Basket
+                </Link>
+              </Box>
+
+              <Box>
+                <Link href="/Payment" color="inherit">
+                  Payment
                 </Link>
               </Box>
             </Grid>

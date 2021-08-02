@@ -39,7 +39,7 @@ function Product({ title, image, id, price, rating }) {
         </div>
       </div>
 
-      <button onClick={addToBasket}> Add to Basket</button>
+      <button onClick={addToBasket}>Add to Basket</button>
     </div>
   );
 }

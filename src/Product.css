@@ -25,7 +25,7 @@
   margin-top: 0.625rem;
   padding: 0.625rem;
   border-color: #03a9f4 #03a8f4c0 #03a8f496;
-  color: #fdfcfc;
+  color: white;
   border-radius: 0.3125rem;
 }
 
@@ -39,6 +39,8 @@
   margin-bottom: 1rem;
   align-items: center;
   text-align: center;
+  size: 10px;
+  align-self: center;
 }
 
 .product__rating {
