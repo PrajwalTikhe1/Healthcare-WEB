@@ -80,6 +80,7 @@ function App() {
             <Header />
 
             <Home />
+
             <Footer />
           </Route>
         </Switch>

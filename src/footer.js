@@ -13,7 +13,7 @@ export default function footer() {
         color="white"
         textAlign="center"
         fontSize="1rem"
-        fontWeight="500"
+        fontWeight="600"
       >
         <Container maxWidth="lg">
           <Grid container spacing="5">
