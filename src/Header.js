@@ -4,19 +4,29 @@ import SearchIcon from "@material-ui/icons/Search";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { Link } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
-import { auth } from "./firebase";
 import logo from "./logo.jpg";
+import netlifyIdentity from "netlify-identity-widget";
 
+netlifyIdentity.init();
 
 function Header() {
   // eslint-disable-next-line
-  const [{ basket, user }, dispatch] = useStateValue();
+  const [{ basket }, dispatch] = useStateValue();
 
-  const handleAuthenticaton = () => {
-    if (user) {
-      auth.signOut();
-    }
-  };  
+  const user = netlifyIdentity.currentUser();
+
+  const handleCLick = () => {
+    netlifyIdentity.open();
+    netlifyIdentity.on("init", (user) => console.log("init", user));
+    netlifyIdentity.on("login", (user) => console.log("Welcome", user));
+    netlifyIdentity.on("logout", () => console.log("Logged out"));
+    netlifyIdentity.on("error", (err) => console.error("Error", err));
+    netlifyIdentity.on("open", () => console.log("Widget opened"));
+    netlifyIdentity.on("close", () => console.log("Widget closed"));
+
+    netlifyIdentity.off("login"); // to unbind all registered handlers
+    netlifyIdentity.off("login", user);
+  };
 
   return (
     <div className="header">
@@ -34,20 +44,18 @@ function Header() {
         </Link>
       </div>
 
-      
       <div className="header__nav">
-
-      <Link className="link-style" to="/login">
-        <div onClick={handleAuthenticaton} className="header__option">
-          <span className="header__optionLineOne">
-            Hello, {!user ? "Guest" : user.emaile}
-          </span>
-          <br></br>
-          <span className="header__optionLineTwo">
-            {user ? "Sign Out" : "Sign In"}
-          </span>
-        </div>
-      </Link>
+        <Link className="link-style">
+          <div onClick={handleCLick} className="header__option">
+            <span className="header__optionLineOne">
+              Hello, {user && user.user_metadata.full_name}
+            </span>
+            <br></br>
+            <span className="header__optionLineTwo">
+              {user ? "Sign Out" : "Sign In"}
+            </span>
+          </div>
+        </Link>
 
         <Link className="link-style" to="/orders">
           <div className="header__option">

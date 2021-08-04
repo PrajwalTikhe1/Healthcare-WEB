@@ -7,12 +7,15 @@ import Checkout from "./Checkout";
 import Login from "./Login";
 import Payment from "./Payment";
 import Orders from "./Orders";
-import { auth } from "./firebase";
-import { useStateValue } from "./StateProvider";
+// import { auth } from "./firebase";
+// import { useStateValue } from "./StateProvider";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import Account from "./Account";
 import Footer from "./footer";
+import netlifyIdentity from "netlify-identity-widget";
+
+netlifyIdentity.init()
 
 const promise = loadStripe(
   "pk_test_51JJI2mSBoXuagvd5eI8eOOW6Lg2ckOyD8nAmq3u1QTxCISS9GBXDOiMJve8iIUYn8SkI4WAsfvvtXSIxrp7lFB1k003EcUqIli"
@@ -20,31 +23,34 @@ const promise = loadStripe(
 
 function App() {
   // eslint-disable-next-line
-  const [{}, dispatch] = useStateValue();
+  // const [{}, dispatch] = useStateValue();
+
 
   useEffect(() => {
     // will only run once when the app component loads...
-
-    auth.onAuthStateChanged((authUser) => {
-      console.log("THE USER IS >>> ", authUser);
-
-      if (authUser) {
-        // the user just logged in / the user was logged in
-
-        dispatch({
-          type: "SET_USER",
-          user: authUser,
-        });
-      } else {
-        // the user is logged out
-        dispatch({
-          type: "SET_USER",
-          user: null,
-        });
-      }
-    });
-    // eslint-disable-next-line
   }, []);
+
+  //   auth.onAuthStateChanged((authUser) => {
+  //     console.log("THE USER IS >>> ", authUser);
+
+  //     if (authUser) {
+  //       // the user just logged in / the user was logged in
+
+  //       dispatch({
+  //         type: "SET_USER",
+  //         user: authUser,
+  //       });
+  //     } else {
+  //       // the user is logged out
+  //       dispatch({
+  //         type: "SET_USER",
+  //         user: null,
+  //       });
+  //   };
+  //   // eslint-disable-next-line
+  // }, []);
+
+  
 
   return (
     <Router>
